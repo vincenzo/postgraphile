@@ -1,5 +1,5 @@
 {
-  "name": "pgapi",
+  "name": "graphile",
   "version": "1.0.0",
   "description": "A GraphQL API generated from any PostgreSQL schema",
   "scripts": {

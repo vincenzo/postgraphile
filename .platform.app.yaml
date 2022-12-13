@@ -1,4 +1,4 @@
-name: pgapi
+name: graphile
 type: nodejs:18
 
 relationships:
