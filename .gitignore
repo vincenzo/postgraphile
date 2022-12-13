@@ -1,1 +1,4 @@
 node_modules
+.platform/local
+/*/.DS_Store
+.idea
