@@ -1,0 +1,20 @@
+{
+  "name": "pgapi",
+  "version": "1.0.0",
+  "description": "A GraphQL API generated from any PostgreSQL schema",
+  "scripts": {
+    "start": "postgraphile"
+  },
+  "keywords": [
+    "graphql",
+    "nodejs",
+    "postgresql"
+  ],
+  "author": "Vincenzo Russo",
+  "license": "MIT",
+  "repository": "",
+  "dependencies": {
+    "postgraphile": "^4.12.11",
+    "postgraphile-plugin-nested-mutations": "^1.1.0"
+  }
+}

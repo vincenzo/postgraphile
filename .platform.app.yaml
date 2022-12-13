@@ -1,0 +1,15 @@
+name: pgapi
+type: nodejs:18
+
+relationships:
+  pg: "postgres:postgresql"
+
+web:
+  commands:
+    start: "node_modules/.bin/postgraphile"
+
+mounts:
+  "/run": "shared:files/run"
+  "/.cache": "shared:files/.cache"
+
+disk: 1024
