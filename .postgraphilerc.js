@@ -3,11 +3,10 @@ const db = JSON.parse(Buffer.from(process.env.PLATFORM_RELATIONSHIPS, "base64").
 module.exports = {
   options: {
     connection: `postgres://${db.username}:${db.password}@${db.host}:${db.port}/${db.path}`,
-    //schema: process.env.PGAPI_SCHEMA || 'public',
     // Recommended to be off in production.
-    disableQueryLog: process.env.PGAPI_ENABLE_QUERYLOG ? ! process.env.PGAPI_ENABLE_QUERYLOG : process.env.PLATFORM_BRANCH === "main",
+    disableQueryLog: process.env.PGRAPHILE_ENABLE_QUERYLOG ? ! process.env.PGRAPHILE_ENABLE_QUERYLOG : process.env.PLATFORM_BRANCH === "main",
     // Recommended to be off in production.
-    disableGraphiql: process.env.PGAPI_ENABLE_GRAPHIQL ? ! process.env.PGAPI_ENABLE_GRAPHIQL : process.env.PLATFORM_BRANCH === "main",
+    disableGraphiql: process.env.PGRAPHILE_ENABLE_GRAPHIQL ? ! process.env.PGRAPHILE_ENABLE_GRAPHIQL : process.env.PLATFORM_BRANCH === "main",
     // GraphiQL enhancements.
     enhanceGraphiql: true,
     // You should enable `watch` only in development. First, the watch flag requires either
@@ -15,12 +14,12 @@ module.exports = {
     // or the manual set up of the same. Second, the schema on the remotely
     // deployed environments should only be updated via migrations on deployment, thus changes
     // can be applied before the application starts, at which point the correct schema will be loaded.
-    watch: process.env.PGAPI_ENABLE_WATCH || (typeof process.env.PLATFORM_BRANCH === "undefined"),
+    watch: process.env.PGRAPHILE_ENABLE_WATCH || (typeof process.env.PLATFORM_BRANCH === "undefined"),
     port: process.env.PORT,
     host: "0.0.0.0",
     simpleCollections: "both",
-    graphql: process.env.PGAPI_GRAPHQL_PATH || "/",
-    graphiql: process.env.PGAPI_GRAPHIQL_PATH || "/graphiql",
+    graphql: process.env.PGRAPHILE_GRAPHQL_PATH || "/",
+    graphiql: process.env.PGRAPHILE_GRAPHIQL_PATH || "/ide",
     legacyRelations: "omit",
     appendPlugins: [
     //   "postgraphile-plugin-connection-filter",
