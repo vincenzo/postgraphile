@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A GraphQL API generated from any PostgreSQL schema",
   "scripts": {
-    "start": "postgraphile"
+    "start": "node_modules/.bin/postgraphile"
   },
   "keywords": [
     "graphql",
